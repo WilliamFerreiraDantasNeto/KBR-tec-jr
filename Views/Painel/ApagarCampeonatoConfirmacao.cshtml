@@ -1,0 +1,21 @@
+﻿@model CampeonatosModel
+@{
+    ViewData["Title"] = "Confirmar Apagar Campeonato";
+    Layout = "~/Views/Shared/_LayoutPainel.cshtml";
+}
+
+<main class="col h-100 text-light p-4">
+    <div class="d-flex justify-content-Center mb-4">
+        <h1 class="h3 ">Realmente deseja apagar o campeonato (@Model.Campeonato)?</h1>
+
+    </div>
+    <div>
+        <a asp-controller="Painel" asp-action="Campeonatos" class="btn btn-light d-flex justify-content-center align-items-center" title="Editar">
+            Voltar
+        </a>
+        <br />
+        <a asp-controller="Painel" asp-action="ApagarCampeonato" asp-route-id="@Model.Codigo" class="btn btn-danger d-flex justify-content-center align-items-center" title="Deletar">
+            Deletar
+        </a>
+    </div>
+</main>

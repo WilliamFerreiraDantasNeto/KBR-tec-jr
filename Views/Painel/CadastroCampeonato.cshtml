@@ -1,0 +1,141 @@
+﻿@model CampeonatosModel
+@{
+    ViewData["Title"] = "Cadastro Campeonato";
+    Layout = "~/Views/Shared/_LayoutPainel.cshtml";
+}
+
+<main class="col h-100 text-light p-4">
+    <div class="d-flex align-items-end justify-content-between mb-4">
+        <h1 class="h3">Cadastrar Campeonato</h1>
+
+        <a asp-controller="Painel" asp-action="Campeonatos" class="btn btn-light">Voltar</a>
+    </div>
+
+    <form asp-controller="Painel" asp-action="CadastroCampeonato" method="post" class="bg-custom rounded col-12 py-3 px-4">
+
+        <input type="hidden" asp-for="Destaque" name="Destaque" value="0">
+
+        <div class="mb-3 row">
+            <label for="Campeonato" class="col-sm-2 col-form-label">Campeonato:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control bg-dark text-light border-dark" asp-for="Campeonato" placeholder="Nome do campeonato">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="Estado" class="col-sm-2 col-form-label">Estado:</label>
+            <div class="col-sm-10">
+                <select name="Estado" class="form-control bg-dark text-light border-dark form-select" asp-for="Estado">
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="Cidade" class="col-sm-2 col-form-label">Cidade:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control bg-dark text-light border-dark" asp-for="Cidade" placeholder="Cidade">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="Data" class="col-sm-2 col-form-label">Data:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control bg-dark text-light border-dark" asp-for="DataRealizacao" placeholder="Data do Campeonato">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="Sobre" class="col-sm-2 col-form-label">Descrição:</label>
+            <div class="col-sm-10">
+                <input type="textarea" class="form-control bg-dark text-light border-dark" asp-for="Sobre" rows="3" placeholder="Sobre">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="ginasio" class="col-sm-2 col-form-label">Ginásio:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control bg-dark text-light border-dark" asp-for="Ginasio" placeholder="Local">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="info" class="col-sm-2 col-form-label">Informações:</label>
+            <div class="col-sm-10">
+                <input type="textarea" class="form-control bg-dark text-light border-dark" asp-for="InformacoesGerais" rows="3" placeholder="Informações sobre o evento">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="entrada" class="col-sm-2 col-form-label">Entrada:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control bg-dark text-light border-dark" asp-for="EntradaAoPublico" placeholder="Entrada ao publico">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="tipo" class="col-sm-2 col-form-label">Tipo:</label>
+            <div class="col-sm-10">
+                <div class="col-sm-10">
+                    <input class="form-control bg-dark text-light border-dark form-check-input" type="radio" name="Tipo" asp-for="Tipo" value="Kimono" checked>
+                    <label class="form-check-label" for="Tipo1">Kimono</label>
+                    <input class="form-control bg-dark text-light border-dark form-check-input" type="radio" name="Tipo" asp-for="Tipo" value="No-Gi">
+                    <label class="form-check-label" for="Tipo2">No-Gi</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="fase" class="col-sm-2 col-form-label">Fase:</label>
+            <div class="col-sm-10">
+                <select name="fase" class="form-control bg-dark text-light border-dark form-select" asp-for="Fase">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="inscricao">Inscrição</option>
+                    <option value="chave">Chave de lutas</option>
+                    <option value="resultado">Resultados</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="status" class="col-sm-2 col-form-label">Status:</label>
+            <div class="col-sm-10">
+                
+                <label for="status" class="form-control bg-dark text-light border-dark col-form-label"><input type="checkbox" class="bg-dark text-light border-white form-check-input" asp-for="Status"> Ativo</label>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-light">Cadastrar</button>
+        </div>
+    </form>
+
+    <div class="bg-custom rounded overflow-hidden">
+    </div>
+</main>
